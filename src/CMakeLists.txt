@@ -1,0 +1,7 @@
+ADD_LIBRARY( migl SHARED
+	     OpenGlUtility.cpp
+	     OffScreenRenderer.cpp)
+TARGET_LINK_LIBRARIES(migl glfw3 ${EXTRA_LIBS} ${GLFW_LIBRARIES})
+SET_TARGET_PROPERTIES(migl PROPERTIES VERSION ${serial} SOVERSION ${soserial})
+
+
