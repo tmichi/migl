@@ -5,5 +5,6 @@
 #pragma comment(lib, "opengl32.lib")
 #elif defined(__APPLE__)
 #include <OpenGL/gl.h>
-// -framework OpenGL -I/usr/local/include -L/usr/locallib -lglfw3
+#else //Linux?
+#include <GL/gl.h>
 #endif

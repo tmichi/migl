@@ -1,6 +1,5 @@
 #include <mi/OffScreenRenderer.hpp>
 #include <mi/glconf.hpp>
-#include <iostream>
 #include <GLFW/glfw3.h>
 
 namespace mi
@@ -23,10 +22,7 @@ namespace mi
 		::glfwWindowHint( GLFW_VISIBLE, 0 );
 		this->_window = ::glfwCreateWindow( width, height, "tmp", NULL, NULL );
 		::glfwMakeContextCurrent( this->_window );
-		if ( !this->_window ) {
-			std::cerr<<"window cannot be created."<<std::endl;
-			return false;
-		}
+		if ( !this->_window ) return false;
 		return true;
 	}
 	
