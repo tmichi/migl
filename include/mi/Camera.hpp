@@ -12,12 +12,6 @@ namespace mi
         class Camera
         {
         private:
-                Eigen::Quaterniond rotation_;	///< rotation
-                Eigen::Vector3d center_;	///< center point
-                double	 dist_;			///< distance between eye-center.
-                double   radius_;		///< radius of bounding sphere.
-                double   fov_;			///< field-of-view angle
-        private:
                 Camera ( const Camera& that );
                 void operator = ( const Camera& that );
         public:
@@ -120,6 +114,12 @@ namespace mi
                         else		p *= radius / p.norm();     // on silhouette
                         return;
                 }
+        private:
+                Eigen::Quaterniond rotation_;	///< rotation
+                Eigen::Vector3d center_;	///< center point
+                double	 dist_;			///< distance between eye-center.
+                double   radius_;		///< radius of bounding sphere.
+                double   fov_;			///< field-of-view angle
         };
 }
 #endif//CAMERA_HPP

@@ -10,10 +10,6 @@ namespace mi
 {
         class Projector
         {
-        private:
-                Eigen::Matrix4d _matrix;
-                Eigen::Matrix4d _inv_matrix;
-		int             _viewport[4];        
         public:
                 explicit Projector ( double modelview[16], double projection[16], int viewport[4] ) {
                         this->_matrix =  Eigen::Map<Eigen::Matrix4d>( projection ) * Eigen::Map<Eigen::Matrix4d>( modelview );
@@ -61,6 +57,10 @@ namespace mi
                         z = p1.z() / p1.w();
                         return 1;
                 }
+        private:
+                Eigen::Matrix4d _matrix;
+                Eigen::Matrix4d _inv_matrix;
+		int             _viewport[4];        
         };
 }
 #endif// MI_PROJECTOR_HPP
