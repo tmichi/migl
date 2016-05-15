@@ -56,10 +56,6 @@ namespace mi
 
         OffScreenRenderer::~OffScreenRenderer ( void )
         {
-		if ( this->_impl != NULL ) {
-			delete this->_impl;
-			this->_impl = NULL;
-		}
                 return;
         }
 

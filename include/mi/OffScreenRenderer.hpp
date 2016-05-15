@@ -6,7 +6,7 @@
 #ifndef MI_RENDER_OFFSCREEN_RENDERER_HPP
 #define MI_RENDER_OFFSCREEN_RENDERER_HPP 1
 #include <vector>
-
+#include <memory>
 namespace mi
 {
         class OffScreenRenderer
@@ -63,7 +63,7 @@ namespace mi
 
         private:
 		class Impl;
-		Impl* _impl;
+		std::unique_ptr<Impl> _impl;
         };
 }
 #endif// MI_RENDER_OFFSCREEN_RENDERER_HPP
